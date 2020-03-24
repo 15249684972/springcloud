@@ -1,0 +1,36 @@
+# 服务名称
+spring:
+  application:
+    name: hengboy-spring-cloud-eureka-production
+  devtools: 
+    restart: 
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost/hibernate?characterEncoding=utf-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+        format_sql: true
+        dialect: cn.wk.springcloud.dialect.MySQL5DialectUTF8
+spring.jpa.properties.hibernate.enable_lazy_load_no_trans: true
+#开启二级缓存
+spring.jpa.properties.hibernate.cache.use_second_level_cache: true
+spring.jpa.properties.cache.use_query_cache: true
+# 服务端口号
+server:
+  port: 8001
+  
+#Eureka 相关配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka02.com:7002/eureka/,http://eureka03.com:7003/eureka/,http://eureka01.com:7001/eureka/
+    instance:
+      prefer-ip-address: true
+      

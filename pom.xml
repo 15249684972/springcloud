@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.wk.springcloud</groupId>
+	<artifactId>manageparentcloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.sources>1.8</maven.compiler.sources>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>1.8</java.version>
+	</properties>
+	<modules>
+		<module>springcloudserver-7001</module>
+		<module>springcloudserver-7002</module>
+		<module>springcloudserver-7003</module>
+		<module>springcloudcommend-api</module>
+		<module>springcloudproduction-8001</module>
+		<module>springcloudclient-9001</module>
+		<module>springcloudproduction-8002</module>
+		<module>springcloudproduction-8003</module>
+		<module>springcloudclientfeign-9002</module>
+		<module>springcloudproductionhystrix-8001</module>
+		<module>springcloudclienthystrixdashboard9003</module>
+		<module>springcloudclientzuul-8080</module>
+		<module>springcloudconfig-3344</module>
+		<module>springcloudconfigclient-3355</module>
+		<module>springcloudproductionconfig-8001</module>
+		<module>springcloudserverconfig-7001</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!--热部署功能-添加依赖 by libingbin2015@aliyun.com -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
+				<optional>true</optional>
+			</dependency>
+			<!-- 日志记录 -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.SR1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

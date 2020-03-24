@@ -1,0 +1,24 @@
+# 服务端口号
+server:
+  port: 8080
+  
+# 服务名称
+spring:
+  application:
+    name: client-zuul  
+
+zuul: 
+  prefix: /wk
+  ignored-services: "*"
+  routes: 
+    mydept.serviceId: hengboy-spring-cloud-eureka-production
+    mydept.path: /myproduction/**
+  
+#Eureka 相关配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka02.com:7002/eureka/,http://eureka03.com:7003/eureka/,http://eureka01.com:7001/eureka/
+  instance:
+    instance-id: gateway
+    prefer-ip-address: true

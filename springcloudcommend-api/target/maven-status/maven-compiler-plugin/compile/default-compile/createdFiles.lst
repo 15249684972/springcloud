@@ -1,0 +1,8 @@
+cn\wk\springcloud\model\manytoone\Order.class
+cn\wk\springcloud\model\onetomany\Customer.class
+cn\wk\springcloud\model\Customer.class
+cn\wk\springcloud\service\DeptClientServiceFallbackFactory.class
+cn\wk\springcloud\model\manytoone\Customer.class
+cn\wk\springcloud\model\onetomany\Order.class
+cn\wk\springcloud\service\CustomerClientService.class
+cn\wk\springcloud\service\DeptClientServiceFallbackFactory$1.class

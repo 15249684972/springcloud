@@ -1,0 +1,15 @@
+# 服务端口号
+server:
+  port: 9002
+  
+feign: 
+  hystrix: 
+    enabled: true
+
+#Eureka 相关配置
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      #defaultZone: http://eureka01.com:7001/eureka/
+      defaultZone: http://eureka02.com:7002/eureka/,http://eureka03.com:7003/eureka/,http://eureka01.com:7001/eureka/
